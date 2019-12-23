@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.io.hydoskyzero.mapper.OrderMapper">
+
+    <resultMap id="orderMap" type="org.io.hydoskyzero.entity.ZeroOrder">
+        <result column="id" property="id"/>
+        <result column="city" property="city"/>
+        <result column="cargo_num" property="cargoNum"/>
+        <result column="order_date" property="orderDate"/>
+        <result column="order_num" property="orderNum"/>
+        <result column="order_sum" property="orderSum"/>
+    </resultMap>
+    <!-- 获取今日订单数量 -->
+    <select id="getOrderNum" resultType="java.lang.Integer">
+        select order_num from zero_order where 1=1 and DATE_FORMAT(order_date, '%Y-%m-%d') =  DATE_FORMAT(#{time}, '%Y-%m-%d')
+    </select>
+
+    <!-- 获取今日订单金额 -->
+    <select id="getOrderSum" resultType="java.math.BigDecimal">
+        select order_sum from zero_order where 1=1 and DATE_FORMAT(order_date, '%Y-%m-%d') =  DATE_FORMAT(#{time}, '%Y-%m-%d')
+    </select>
+
+    <!-- 获取今日货物数量 -->
+    <select id="getCargoNum" resultType="java.lang.Integer">
+        select cargo_num from zero_order where 1=1 and DATE_FORMAT(order_date, '%Y-%m-%d') =  DATE_FORMAT(#{time}, '%Y-%m-%d')
+    </select>
+
+    <!-- 历史订单总量 -->
+    <select id="getAllOrderNum" resultType="java.lang.Integer">
+        select sum(order_num) from zero_order where 1=1
+    </select>
+
+    <!-- 获取历史订单金额 -->
+    <select id="getAllOrderSum" resultType="java.math.BigDecimal">
+        select sum(order_sum) from zero_order where 1=1
+    </select>
+
+    <!-- 历史货物总量 -->
+    <select id="getAllCargoNum" resultType="java.lang.Integer">
+        select sum(cargo_num) from zero_order where 1=1
+    </select>
+
+    <!-- 获取指定年度订单金额 -->
+    <select id="getCityOrderSum" resultType="java.math.BigDecimal">
+        select sum(order_sum) from zero_order where 1=1 and year(order_date)=#{year}
+    </select>
+
+    <!-- 获取指定年度的城市货运数量 -->
+    <select id="getCityCargoNum" resultType="java.lang.Integer">
+        select sum(cargo_num) from zero_order where 1=1 and year(order_date)=#{year}
+    </select>
+
+    <select id="selectIsNone" resultType="java.lang.String">
+        SELECT id from zero_order where 1=1 and DATE_FORMAT(order_date, '%Y-%m-%d') =  DATE_FORMAT(#{time}, '%Y-%m-%d')
+    </select>
+
+</mapper>

@@ -1,0 +1,33 @@
+
+server:
+  port: 8887
+spring:
+  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://49.234.192.103:3306/hydosky_zero?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+    username: root
+    password: root
+#    url: jdbc:mysql://localhost:3306/seata?useSSL=false&serverTimezone=Asia/Shanghai
+  freemarker:
+    checkTemplateLocation: false
+mybatis-plus:
+    mapper-locations: classpath*:mappers/*.xml
+    type-aliases-package: org.io.hydoskyzero.entity;
+#  type-aliases-package: org.io.hydoskyzero.mapper
+logging:
+  level:
+    org.io.hydoskyzero.mapper: debug
+
+
+# 赣州系数
+params:
+  Gan_Zhou: 1
+  Mian_Yang: 1.66
+  Chang_Sha: 0.33
+  Lan_Zhou: 0.62
+  Liu_Zhou: 0.55
+  Ji_Ning: 0.38
+  He_Ze: 0.66
+  Heng_Yang: 0.09
+  start_time: "08:00:00"
+  end_time: "12:00:00"

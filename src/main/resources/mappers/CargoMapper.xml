@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.io.hydoskyzero.mapper.CargoMapper">
+    <resultMap id="CargoMap" type="org.io.hydoskyzero.entity.ZeroCargo">
+        <result column="id" property="id"/>
+        <result column="cargo_type" property="cargoType"/>
+        <result column="cargo_detail" property="cargoDetail"/>
+        <result column="cargo_date" property="cargoDate"/>
+        <result column="cargo_type_all" property="cargoTypeAll"/>
+    </resultMap>
+
+    <select id="getHotCargoDetail" resultType="java.lang.String">
+        select cargo_detail from zero_cargo where DATE_FORMAT(cargo_date, '%Y-%m-%d') =  DATE_FORMAT(#{time}, '%Y-%m-%d')
+    </select>
+
+    <select id="getCargoType" resultType="java.lang.String">
+        SELECT cargo_type_all from zero_cargo where DATE_FORMAT(cargo_date, '%Y-%m-%d') =  DATE_FORMAT(#{time}, '%Y-%m-%d')
+    </select>
+
+    <select id="getTodyCargoType" resultType="java.lang.String">
+        SELECT cargo_type from zero_cargo where DATE_FORMAT(cargo_date, '%Y-%m-%d') =  DATE_FORMAT(#{time}, '%Y-%m-%d')
+    </select>
+
+</mapper>
