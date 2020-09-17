@@ -15,7 +15,7 @@ public class DateUtil {
 
 	/***
 	 * 时间转cron表达式 返回格式自定义
-	 * @param date
+	 * @param date 日期
 	 * @param dateFormat : e.g:yyyy-MM-dd HH:mm:ss
 	 * @return
 	 */
