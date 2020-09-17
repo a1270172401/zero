@@ -4,7 +4,7 @@ server:
 spring:
   datasource:
 #    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://49.234.192.103:3306/hydosky_zero?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8
+    url: jdbc:mysql://192.168.42.131:3306/hydosky_zero?useSSL=false&useUnicode=true&characterEncoding=utf-8&zeroDateTimeBehavior=convertToNull&transformedBitIsBoolean=true&tinyInt1isBit=false&allowMultiQueries=true&serverTimezone=GMT%2B8
     username: root
     password: root
 #    url: jdbc:mysql://localhost:3306/seata?useSSL=false&serverTimezone=Asia/Shanghai

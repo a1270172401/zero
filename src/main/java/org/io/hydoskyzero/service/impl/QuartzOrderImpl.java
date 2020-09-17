@@ -41,7 +41,7 @@ public class QuartzOrderImpl implements QuartzOrder {
      * 调用该方法,查询今日是否生成过订单,
      * 若生成过则修改订单,若没生成则新增一条数据
      */
-    @Scheduled(cron="0/1 * * * * ?")    //表示每过一秒执行一次该方法
+//    @Scheduled(cron="0/1 * * * * ?")    //表示每过一秒执行一次该方法
     @Transactional
     public Map getAnOrder(){
         //判断是否往下执行
