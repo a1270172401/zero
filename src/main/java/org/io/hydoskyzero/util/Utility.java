@@ -17,6 +17,7 @@ import java.util.*;
 
 /**
  * 字符串工具类
+ * @author 念着倒才子傻
  */
 public class Utility {
 
@@ -38,8 +39,9 @@ public class Utility {
      * @return
      */
     public static String strValueOf(Object obj) {
-        if (obj == null)
+        if (obj == null) {
             return null;
+        }
         if ("null".equals(obj.toString()) || "undefined".equals(obj.toString()) || "{}".equals(obj.toString()) || "[]".equals(obj.toString()) || "[null]".equals(obj.toString()) || "".equals(obj.toString())) {
             return null;
         }
@@ -117,7 +119,9 @@ public class Utility {
      * Java 非小数BigDecimal转换为Integer
      */
     public static Integer getInteger(BigDecimal num){
-        if (strValueOf(num)==null) return null;
+        if (strValueOf(num)==null) {
+            return null;
+        }
         String str=num.toString();
         Integer integer=Integer.parseInt(str);
         return integer;
@@ -134,7 +138,9 @@ public class Utility {
             SimpleDateFormat sdf= new SimpleDateFormat("yyyy-MM-dd");
             Date date = sdf.parse(time);
             for (int i = 7; i >= 0; i--) {
-                if (i==0) continue;
+                if (i==0) {
+                    continue;
+                }
                 pastDaysList.add(getPastDate(i,date));
             }
         }catch (ParseException e){

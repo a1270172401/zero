@@ -7,6 +7,9 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
+/**
+ * @author 念着倒才子傻
+ */
 @Data
 public class ZeroCargo implements Serializable {
     /**

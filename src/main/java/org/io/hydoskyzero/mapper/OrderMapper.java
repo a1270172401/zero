@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 
+/**
+ * @author 念着倒才子傻
+ */
 @Repository(value = "org.io.hydoskyzero.mapper.OrderMapper")
 @Component
 public interface OrderMapper extends BaseMapper<ZeroOrder> {

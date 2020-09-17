@@ -6,6 +6,9 @@ import org.io.hydoskyzero.entity.ZeroCargo;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author 念着倒才子傻
+ */
 public interface CargoService extends IService<ZeroCargo> {
 
     /**

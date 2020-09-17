@@ -8,6 +8,9 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.scheduling.annotation.EnableScheduling;
 
+/**
+ * @author 念着倒才子傻
+ */
 @SpringBootApplication(scanBasePackages = "org.io.hydoskyzero.*")
 @MapperScan("org.io.hydoskyzero.mapper")//标记扫描的mapper位置
 @EnableScheduling

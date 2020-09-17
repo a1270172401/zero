@@ -9,10 +9,11 @@ import java.math.BigDecimal;
 
 /**
  * 赣州系数
+ * @author 念着倒才子傻
  */
 @Configuration
 public class ParameterConfig {
-    private static final Logger logger = LoggerFactory.getLogger(ParameterConfig.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ParameterConfig.class);
     private volatile static ParameterConfig parameterConfig;
     public ParameterConfig(){}
      /**
@@ -74,7 +75,7 @@ public class ParameterConfig {
     }
     @Value("${params.start_time}")
     public void setStartTime(String paramProp) {
-        ParameterConfig.getParameterConfig().startTime = paramProp;
+        ParameterConfig.startTime = paramProp;
     }
 
     /**
@@ -86,7 +87,7 @@ public class ParameterConfig {
     }
     @Value("${params.end_time}")
     public void setEndTime(String paramProp) {
-        ParameterConfig.getParameterConfig().endTime = paramProp;
+        ParameterConfig.endTime = paramProp;
     }
 
     /**
@@ -98,7 +99,7 @@ public class ParameterConfig {
     }
     @Value("${params.Gan_Zhou}")
     public void setGanZhou(BigDecimal paramProp) {
-        ParameterConfig.getParameterConfig().Gan_Zhou = paramProp;
+        ParameterConfig.Gan_Zhou = paramProp;
     }
 
     /**
@@ -110,7 +111,7 @@ public class ParameterConfig {
     }
     @Value("${params.Mian_Yang}")
     public void setMianYang(BigDecimal paramProp) {
-        ParameterConfig.getParameterConfig().Mian_Yang = paramProp;
+        ParameterConfig.Mian_Yang = paramProp;
     }
 
     /**
@@ -122,7 +123,7 @@ public class ParameterConfig {
     }
     @Value("${params.Chang_Sha}")
     public void setChangSha(BigDecimal paramProp) {
-        ParameterConfig.getParameterConfig().Chang_Sha = paramProp;
+        ParameterConfig.Chang_Sha = paramProp;
     }
 
     /**
@@ -134,7 +135,7 @@ public class ParameterConfig {
     }
     @Value("${params.Lan_Zhou}")
     public void setLanZhou(BigDecimal paramProp) {
-        ParameterConfig.getParameterConfig().Lan_Zhou = paramProp;
+        ParameterConfig.Lan_Zhou = paramProp;
     }
 
     /**
@@ -146,7 +147,7 @@ public class ParameterConfig {
     }
     @Value("${params.Liu_Zhou}")
     public void setLiuZhou(BigDecimal paramProp) {
-        ParameterConfig.getParameterConfig().Liu_Zhou = paramProp;
+        ParameterConfig.Liu_Zhou = paramProp;
     }
 
     /**
@@ -158,7 +159,7 @@ public class ParameterConfig {
     }
     @Value("${params.Ji_Ning}")
     public void setJiNing(BigDecimal paramProp) {
-        ParameterConfig.getParameterConfig().Ji_Ning = paramProp;
+        ParameterConfig.Ji_Ning = paramProp;
     }
 
     /**
@@ -170,7 +171,7 @@ public class ParameterConfig {
     }
     @Value("${params.He_Ze}")
     public void setHeZe(BigDecimal paramProp) {
-        ParameterConfig.getParameterConfig().He_Ze = paramProp;
+        ParameterConfig.He_Ze = paramProp;
     }
     /**
      * 衡阳
@@ -181,7 +182,7 @@ public class ParameterConfig {
     }
     @Value("${params.Heng_Yang}")
     public void setHengYang(BigDecimal paramProp) {
-        ParameterConfig.getParameterConfig().Heng_Yang = paramProp;
+        ParameterConfig.Heng_Yang = paramProp;
     }
 
     /**

@@ -9,7 +9,7 @@ import java.io.Serializable;
 @ApiModel(
         description = "返回信息"
 )
-public class Rsult<T> implements Serializable {
+public class Result<T> implements Serializable {
     private static final long serialVersionUID = 1L;
     @ApiModelProperty(
             value = "状态码",
@@ -29,23 +29,23 @@ public class Rsult<T> implements Serializable {
     )
     private String msg;
 
-    private Rsult(IResultCode resultCode) {
+    private Result(IResultCode resultCode) {
         this(resultCode, null, resultCode.getMessage());
     }
 
-    private Rsult(IResultCode resultCode, String msg) {
+    private Result(IResultCode resultCode, String msg) {
         this(resultCode, null, msg);
     }
 
-    private Rsult(IResultCode resultCode, T data) {
+    private Result(IResultCode resultCode, T data) {
         this(resultCode, data, resultCode.getMessage());
     }
 
-    private Rsult(IResultCode resultCode, T data, String msg) {
+    private Result(IResultCode resultCode, T data, String msg) {
         this(resultCode.getCode(), data, msg);
     }
 
-    private Rsult(int code, T data, String msg) {
+    private Result(int code, T data, String msg) {
         this.code = code;
         this.data = data;
         this.msg = msg;
@@ -53,47 +53,47 @@ public class Rsult<T> implements Serializable {
     }
 
 
-    public static <T> Rsult<T> data(T data) {
+    public static <T> Result<T> data(T data) {
         return data(data, "操作成功");
     }
 
-    public static <T> Rsult<T> data(T data, String msg) {
+    public static <T> Result<T> data(T data, String msg) {
         return data(200, data, msg);
     }
 
-    public static <T> Rsult<T> data(int code, T data, String msg) {
-        return new Rsult(code, data, data == null ? "暂无承载数据" : msg);
+    public static <T> Result<T> data(int code, T data, String msg) {
+        return new Result(code, data, data == null ? "暂无承载数据" : msg);
     }
 
-    public static <T> Rsult<T> success(String msg) {
-        return new Rsult(ResultCode.SUCCESS, msg);
+    public static <T> Result<T> success(String msg) {
+        return new Result(ResultCode.SUCCESS, msg);
     }
 
-    public static <T> Rsult<T> success(IResultCode resultCode) {
-        return new Rsult(resultCode);
+    public static <T> Result<T> success(IResultCode resultCode) {
+        return new Result(resultCode);
     }
 
-    public static <T> Rsult<T> success(IResultCode resultCode, String msg) {
-        return new Rsult(resultCode, msg);
+    public static <T> Result<T> success(IResultCode resultCode, String msg) {
+        return new Result(resultCode, msg);
     }
 
-    public static <T> Rsult<T> fail(String msg) {
-        return new Rsult(ResultCode.FAILURE, msg);
+    public static <T> Result<T> fail(String msg) {
+        return new Result(ResultCode.FAILURE, msg);
     }
 
-    public static <T> Rsult<T> fail(int code, String msg) {
-        return new Rsult(code, (Object)null, msg);
+    public static <T> Result<T> fail(int code, String msg) {
+        return new Result(code, (Object)null, msg);
     }
 
-    public static <T> Rsult<T> fail(IResultCode resultCode) {
-        return new Rsult(resultCode);
+    public static <T> Result<T> fail(IResultCode resultCode) {
+        return new Result(resultCode);
     }
 
-    public static <T> Rsult<T> fail(IResultCode resultCode, String msg) {
-        return new Rsult(resultCode, msg);
+    public static <T> Result<T> fail(IResultCode resultCode, String msg) {
+        return new Result(resultCode, msg);
     }
 
-    public static <T> Rsult<T> status(boolean flag) {
+    public static <T> Result<T> status(boolean flag) {
         return flag ? success("操作成功") : fail("操作失败");
     }
 
@@ -129,10 +129,11 @@ public class Rsult<T> implements Serializable {
         this.msg = msg;
     }
 
+    @Override
     public String toString() {
         return "Rsult(code=" + this.getCode() + ", success=" + this.isSuccess() + ", data=" + this.getData() + ", msg=" + this.getMsg() + ")";
     }
 
-    public Rsult() {
+    public Result() {
     }
 }

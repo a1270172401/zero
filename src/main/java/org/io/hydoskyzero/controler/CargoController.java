@@ -1,20 +1,19 @@
 package org.io.hydoskyzero.controler;
 
 import org.io.hydoskyzero.service.CargoService;
-import org.io.hydoskyzero.service.QuartzOrder;
 import org.io.hydoskyzero.service.impl.QuartzOrderImpl;
-import org.io.hydoskyzero.util.Rsult;
+import org.io.hydoskyzero.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
-import static org.io.hydoskyzero.util.Utility.getAllCityParams;
-
+/**
+ * @author 念着倒才子傻
+ */
 @RestController
 @RequestMapping("/cargo")
 public class CargoController {
@@ -28,9 +27,9 @@ public class CargoController {
      * @return
      */
     @GetMapping("/getHotCargoDetail")
-    public Rsult getHotCargoDetail(){
+    public Result getHotCargoDetail(){
         List<Map> list= cargoService.getHotCargoDetail();
-        return Rsult.data(list);
+        return Result.data(list);
     }
 
     /**
@@ -38,9 +37,9 @@ public class CargoController {
      * @return
      */
     @GetMapping("/getHotCity")
-    public Rsult getHotCity(){
+    public Result getHotCity(){
         Map list = cargoService.getHotCity();
-        return Rsult.data(list);
+        return Result.data(list);
     }
 
     /**
@@ -48,8 +47,8 @@ public class CargoController {
      * @return
      */
     @GetMapping("/getCargoType")
-    public Rsult getCargoType(){
+    public Result getCargoType(){
         List<Map> list = cargoService.getCargoType();
-        return Rsult.data(list);
+        return Result.data(list);
     }
 }

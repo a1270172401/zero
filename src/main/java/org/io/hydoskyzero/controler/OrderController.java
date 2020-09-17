@@ -1,7 +1,7 @@
 package org.io.hydoskyzero.controler;
 
 import org.io.hydoskyzero.service.OrderService;
-import org.io.hydoskyzero.util.Rsult;
+import org.io.hydoskyzero.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -9,6 +9,9 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author 念着倒才子傻
+ */
 @RestController
 @RequestMapping("/order")
 public class OrderController {
@@ -20,9 +23,9 @@ public class OrderController {
      * @return Rsult
      */
     @GetMapping("/getOrderNum")
-    public Rsult getOrderNum(){
+    public Result getOrderNum(){
         Integer num = orderService.getOrderNum();
-        return Rsult.data(num);
+        return Result.data(num);
     }
 
     /**
@@ -30,9 +33,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("/getOrderSum")
-    public Rsult getOrderSum(){
+    public Result getOrderSum(){
         BigDecimal num = orderService.getOrderSum();
-        return Rsult.data(num);
+        return Result.data(num);
     }
 
     /**
@@ -40,9 +43,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("/getCargoNum")
-    public Rsult getCargoNum(){
+    public Result getCargoNum(){
         Integer num = orderService.getCargoNum();
-        return  Rsult.data(num);
+        return  Result.data(num);
     }
 
     /**
@@ -50,9 +53,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("/getAllOrderNum")
-    public Rsult getAllOrderNum(){
+    public Result getAllOrderNum(){
         Integer num = orderService.getAllOrderNum();
-        return Rsult.data(num);
+        return Result.data(num);
     }
 
     /**
@@ -60,9 +63,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("/getAllOrderSum")
-    public Rsult getAllOrderSum(){
+    public Result getAllOrderSum(){
         BigDecimal num = orderService.getAllOrderSum();
-        return Rsult.data(num);
+        return Result.data(num);
     }
 
     /**
@@ -70,9 +73,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("/getAllCargoNum")
-    public Rsult getAllCargoNum(){
+    public Result getAllCargoNum(){
         Integer num = orderService.getAllCargoNum();
-        return Rsult.data(num);
+        return Result.data(num);
     }
 
     /**
@@ -80,9 +83,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("/getRecentOrderSum")
-    public Rsult getRecentOrderSum(){
+    public Result getRecentOrderSum(){
         List<Map> list = orderService.getRecentOrderSum();
-        return Rsult.data(list);
+        return Result.data(list);
     }
 
     /**
@@ -90,9 +93,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("/getCityOrderSum")
-    public Rsult getCityOrderSum(){
+    public Result getCityOrderSum(){
         List<Map> list = orderService.getCityOrderSum();
-        return Rsult.data(list);
+        return Result.data(list);
     }
 
     /**
@@ -100,9 +103,9 @@ public class OrderController {
      * @return
      */
     @GetMapping("/getCityCargoNum")
-    public Rsult getCityCargoNum(){
+    public Result getCityCargoNum(){
         List<Map> list = orderService.getCityCargoNum();
-        return Rsult.data(list);
+        return Result.data(list);
     }
 
 }

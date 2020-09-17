@@ -7,9 +7,7 @@ import java.util.Date;
 
 /**
  * java时间与cron表达式互转 工具类
- * @Author
- * @Date
- * @Description
+ * @author 念着倒才子傻
  */
 public class DateUtil {
 

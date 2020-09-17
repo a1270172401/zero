@@ -8,6 +8,9 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * @author 念着倒才子傻
+ */
 public interface OrderService extends IService<ZeroOrder> {
     /**
      * 查询今日订单数量

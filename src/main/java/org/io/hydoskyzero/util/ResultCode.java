@@ -1,5 +1,9 @@
 package org.io.hydoskyzero.util;
 
+/**
+ * @author 念着倒才子傻
+ */
+
 public enum ResultCode implements IResultCode {
     SUCCESS(200, "操作成功"),
     FAILURE(400, "业务异常"),
@@ -18,10 +22,12 @@ public enum ResultCode implements IResultCode {
     final int code;
     final String message;
 
+    @Override
     public int getCode() {
         return this.code;
     }
 
+    @Override
     public String getMessage() {
         return this.message;
     }

@@ -23,6 +23,7 @@ import static org.io.hydoskyzero.util.Utility.*;
 
 /**
  * 定时生成订单类
+ * @author 念着倒才子傻
  */
 @Service
 public class QuartzOrderImpl implements QuartzOrder {
@@ -45,7 +46,9 @@ public class QuartzOrderImpl implements QuartzOrder {
     public Map getAnOrder(){
         //判断是否往下执行
         Boolean isPlay = play();
-        if (!isPlay)  return null;  //不执行
+        if (!isPlay) {
+            return null;  //不执行
+        }
         System.out.println("自动执行生成订单方法。。。");
         //获取今日时间
         String date = getTime();
@@ -225,13 +228,27 @@ public class QuartzOrderImpl implements QuartzOrder {
      * @return
      */
     public Integer getType(Integer detail){
-        if (0<=detail&&detail<=5) return 0;
-        if (6<=detail&&detail<=10) return 1;
-        if (11<=detail&&detail<=17) return 2;
-        if (18<=detail&&detail<=25) return 3;
-        if (26<=detail&&detail<=28) return 4;
-        if (detail==29) return 5;
-        if (detail==30) return 6;
+        if (0<=detail&&detail<=5) {
+            return 0;
+        }
+        if (6<=detail&&detail<=10) {
+            return 1;
+        }
+        if (11<=detail&&detail<=17) {
+            return 2;
+        }
+        if (18<=detail&&detail<=25) {
+            return 3;
+        }
+        if (26<=detail&&detail<=28) {
+            return 4;
+        }
+        if (detail==29) {
+            return 5;
+        }
+        if (detail==30) {
+            return 6;
+        }
         return null;
     }
 
@@ -286,7 +303,9 @@ public class QuartzOrderImpl implements QuartzOrder {
         String date = getPastDate(1,new Date());
         //查询昨日订单id
         String result = orderMapper.selectIsNone(date);
-        if (strValueOf(result)==null) return "0,0,0,0,0,0,0";
+        if (strValueOf(result)==null) {
+            return "0,0,0,0,0,0,0";
+        }
         //根据日期查询数据
         ZeroCargo zeroCargo = new ZeroCargo();
         zeroCargo.setId(result);
@@ -326,8 +345,11 @@ public class QuartzOrderImpl implements QuartzOrder {
 //        zeroOrder.setOrderDate(getDateOfString(date));//获取当日的时间
         String result = orderMapper.selectIsNone(date);
         System.out.println(result);
-        if (strValueOf(result) == null) return null;
-        else return result;
+        if (strValueOf(result) == null) {
+            return null;
+        } else {
+            return result;
+        }
     }
 
 }
