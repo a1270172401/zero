@@ -31,7 +31,7 @@ public class DateUtil {
 	/**
 	 * cron表达式 转 时间类型 返回格式自定义
 	 * @param cron
-	 * @param dateFormat
+	 * @param dateFormat 日期格式
 	 * @return
 	 * @throws ParseException
 	 */
